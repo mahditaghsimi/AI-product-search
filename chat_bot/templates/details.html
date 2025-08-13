@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ product.name }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { font-family: sans-serif; background: #f8f9fa; direction: rtl; padding: 20px; }
+        .container { max-width: 700px; margin: auto; background: white; padding: 20px; border-radius: 8px; }
+        img { width: 100%; height: auto; border-radius: 6px; }
+        h1 { font-size: 1.4rem; }
+        .price { color: #28a745; font-weight: bold; margin: 10px 0; font-size: 1.2rem; }
+        a.link { color: #007bff; text-decoration: none; word-break: break-all; }
+        a.link:hover { text-decoration: underline; }
+        p.description { margin-top: 15px; line-height: 1.6; text-align: justify; }
+        button { margin-top: 15px; padding: 10px 20px; border: none; border-radius: 4px; background: #007bff; color: white; cursor: pointer; }
+        button:hover { background: #0056b3; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="{{ product.image }}" alt="{{ product.name }}">
+        <h1>{{ product.name }}</h1>
+        <p class="price">{{ product.price }}</p>
+        <p><a class="link" href="{{ product.link }}" target="_blank">{{ product.link }}</a></p>
+        <p class="description">{{ product.description or "🤨No description available." }}</p>
+        <button onclick="history.back()">🔙Back</button>
+    </div>
+</body>
+</html>
